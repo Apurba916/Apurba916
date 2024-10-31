@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    // Use current time as seed for random generator
+    srand(time(0));
+
+    // Generate random number between 0 and 100
+    int random_number = rand() % 101;
+
+    int no_of_tries = 0;
+
+    int guessed_number;
+    printf("Guess the number:\n");
+    scanf("%d", &guessed_number);
+
+    if (guessed_number == random_number)
+    {
+        printf("You guessed it right.\n");
+    }
+
+    else if (guessed_number > random_number)
+    {
+        printf("The number was larger.\n");
+    }
+
+    else if (guessed_number < random_number)
+    {
+        printf("The number was smaller.\n");
+    }
+    
+
+    no_of_tries++;
+    printf("You tried %d times.\n", no_of_tries);
+    
+
+    return 0;
+}
